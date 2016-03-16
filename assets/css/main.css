@@ -230,6 +230,16 @@ a:before, a:after {
 	text-align: center;
 	letter-spacing: 3px;
 }
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px){
+    #headerwrap h1 {
+        color: #ffffff;
+        font-size: 30px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+}
 #headerwrap p {
 	color: #fff;
 	font-size: 22px;
@@ -526,11 +536,7 @@ body .header {
 }
 
 @media screen and (max-width:769px) {
-#headerwrap h1 {
+/*#headerwrap h1 {
 	font-size: 80px;
-}
-#headerwrap p {
-	font-size: 30px;
-	line-height: 38px;
-}
+}*/
 }

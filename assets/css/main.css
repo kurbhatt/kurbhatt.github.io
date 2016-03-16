@@ -540,3 +540,7 @@ body .header {
 	font-size: 80px;
 }*/
 }
+
+.image-centered-responsive{
+    margin: 0 auto;
+}

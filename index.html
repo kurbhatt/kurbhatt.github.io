@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>We're Coming...</title>
+    <title>Web Push Notifications</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>We're coming..</h2>
+<h2>Web Push Notifications</h2>
+
+<h5>If application do not have permission then it'll ask for it first time.</h5>
+<span>Click on below button to send push notification</span>
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <button class="btn btn-default" onclick="notifyMe()">Notify me!</button>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!Notification) {
+            alert('Desktop notifications not available in your browser.');
+            return;
+        }
+        if (Notification.permission !== "granted")
+            Notification.requestPermission();
+    });
+    function notifyMe() {
+        if (Notification.permission !== "granted")
+            Notification.requestPermission();
+        else {
+            var notification = new Notification('Push Notification Called: kurbhatt', {
+                icon: 'https://avatars1.githubusercontent.com/u/5147118?s=460&v=4',
+                body: "Hey there! You're notified that you're on github sample example of Web Push Notification."
+            });
+            notification.onclick = function () {
+                window.open("https://github.com/kurbhatt/WebPushNotifications");
+            };
+        }
+    }
+</script>
 </body>
 </html>
